@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
       darkTheme: AppTheme.darkThemeData,
       initialBinding: AppBinding(),*/
       initialRoute: AppRoutes.initialRoute,
-      getPages: AppRoutes.pages,
+      getPages: AppRoutes.routes,
     );
   }
 }

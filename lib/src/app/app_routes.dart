@@ -8,7 +8,7 @@ class AppRoutes {
 
   static const String initialRoute = '/';
 
-  static List<GetPage> pages = [
+  static List<GetPage> routes = [
 
     getPageRightToLeft(
       name: '/',
@@ -20,23 +20,10 @@ class AppRoutes {
       page: () => Settings(),
     ),
 
-    /*GetPage(name: SplashPage.routeName, page: () => SplashPage()),
-    GetPage(name: InitialPage.routeName, page: () => InitialPage()),
-    GetPage(name: LoadingPage.routeName, page: () => LoadingPage()),
-    GetPage(name: HomePage.routeName, page: () => HomePage()),
-    GetPage(
+    /*GetPage(
       name: SignupPage.ROUTE_NAME,
       page: () => SignupPage(),
       binding: SignupBinding(),
-    ),
-    GetPage(
-        name: ForgotPasswordPage.ROUTE_NAME,
-        page: () => ForgotPasswordPage()
-    ),
-    GetPage(
-        name: LoginPage.ROUTE_NAME,
-        page: () => LoginPage(),
-        binding: LoginBinding()
     ),*/
 
   ];

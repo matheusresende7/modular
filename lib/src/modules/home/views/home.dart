@@ -9,7 +9,30 @@ class Home extends StatelessWidget {
 
       appBar: AppBar(title: Text('Home'),),
 
-      body: Center(child: Text('Home'),),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            Text(
+                'Home',
+              style: TextStyle(
+                fontSize: 35,
+                fontFamily: 'Satisfy',
+              )
+            ),
+
+            SizedBox(height: 20,),
+
+            Image.asset(
+              'lib/assets/images/linkedin.png',
+              width: 100,
+              fit: BoxFit.cover,
+            ),
+
+          ],
+        ),
+      ),
 
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.arrow_forward_ios),
