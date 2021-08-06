@@ -29,13 +29,33 @@ class Settings extends StatelessWidget {
         ),
       ),
 
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.nights_stay,
-          color: Theme.of(context).accentColor,
-        ),
-        backgroundColor: Theme.of(context).primaryColor,
-        onPressed: () {controller.ativarDarkMode();},
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+
+          FloatingActionButton(
+            child: Icon(
+              Icons.wb_sunny,
+              color: Theme.of(context).accentColor,
+            ),
+            heroTag: 'btn1',
+            backgroundColor: Theme.of(context).primaryColor,
+            onPressed: () {controller.changeDefaultTheme();},
+          ),
+
+          SizedBox(width: 10,),
+
+          FloatingActionButton(
+            child: Icon(
+              Icons.nights_stay,
+              color: Theme.of(context).accentColor,
+            ),
+            heroTag: 'btn2',
+            backgroundColor: Theme.of(context).primaryColor,
+            onPressed: () {controller.changeDarkTheme();},
+          ),
+
+        ],
       ),
 
     );

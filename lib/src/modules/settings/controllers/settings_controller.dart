@@ -19,10 +19,6 @@ class SettingsController extends GetxController {
     darkModeAtivado = true;
   }
 
-  void ativarDarkMode () {
-    darkModeAtivado ? changeDefaultTheme() : changeDarkTheme();
-  }
-
 
 
 }
