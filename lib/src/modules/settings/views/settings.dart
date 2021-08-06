@@ -6,7 +6,7 @@ class Settings extends StatelessWidget {
 
     return Scaffold(
 
-      appBar: AppBar(title: Text('Modular'),),
+      appBar: AppBar(title: Text('Settings'),),
 
       body: Center(child: Text('Settings'),),
 
