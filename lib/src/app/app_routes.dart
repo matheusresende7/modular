@@ -30,6 +30,8 @@ class AppRoutes {
 
 }
 
+
+
 GetPage getPageRightToLeft ({
   String name,
   Widget Function() page,

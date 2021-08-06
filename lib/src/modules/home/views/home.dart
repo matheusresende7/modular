@@ -7,7 +7,13 @@ class Home extends StatelessWidget {
 
     return Scaffold(
 
-      appBar: AppBar(title: Text('Home'),),
+      backgroundColor: Theme.of(context).backgroundColor,
+
+      appBar: AppBar(
+        title: Text('Home'),
+        backgroundColor: Theme.of(context).primaryColor,
+        centerTitle: true,
+      ),
 
       body: Center(
         child: Column(
@@ -19,7 +25,8 @@ class Home extends StatelessWidget {
               style: TextStyle(
                 fontSize: 35,
                 fontFamily: 'Satisfy',
-              )
+                color: Theme.of(context).primaryColor,
+              ),
             ),
 
             SizedBox(height: 20,),
@@ -35,7 +42,11 @@ class Home extends StatelessWidget {
       ),
 
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_forward_ios),
+        child: Icon(
+            Icons.arrow_forward_ios,
+          color: Theme.of(context).accentColor,
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {Get.toNamed('/Settings');},
       ),
 
