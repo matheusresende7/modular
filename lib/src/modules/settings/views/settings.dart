@@ -1,63 +1,76 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:modular/src/modules/home/controllers/home_controller.dart';
 import 'package:modular/src/modules/settings/controllers/settings_controller.dart';
 
 class Settings extends StatelessWidget {
-
-  final controller = SettingsController();
-
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return GetBuilder<HomeController>(
+        init: HomeController(),
+        builder: (_) {
 
-      backgroundColor: Theme.of(context).backgroundColor,
+          return GetBuilder<SettingsController>(
+              init: SettingsController(),
+              builder: (_) {
 
-      appBar: AppBar(
-        title: Text('Settings'),
-        backgroundColor: Theme.of(context).primaryColor,
-        centerTitle: true,
-      ),
+                return Scaffold(
 
-      body: Center(
-        child: Text(
-            'Settings',
-          style: TextStyle(
-            fontSize: 35,
-            fontFamily: 'Satisfy',
-            color: Theme.of(context).primaryColor,
-          ),
-        ),
-      ),
+                  backgroundColor: Theme.of(context).backgroundColor,
 
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
+                  appBar: AppBar(
+                    title: Text('Settings'),
+                    backgroundColor: Theme.of(context).primaryColor,
+                    centerTitle: true,
+                  ),
 
-          FloatingActionButton(
-            child: Icon(
-              Icons.wb_sunny,
-              color: Theme.of(context).accentColor,
-            ),
-            heroTag: 'btn1',
-            backgroundColor: Theme.of(context).primaryColor,
-            onPressed: () {controller.changeDefaultTheme();},
-          ),
+                  body: Center(
+                    child: Text(
+                      'Settings',
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontFamily: 'Satisfy',
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ),
+                  ),
 
-          SizedBox(width: 10,),
+                  floatingActionButton: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
 
-          FloatingActionButton(
-            child: Icon(
-              Icons.nights_stay,
-              color: Theme.of(context).accentColor,
-            ),
-            heroTag: 'btn2',
-            backgroundColor: Theme.of(context).primaryColor,
-            onPressed: () {controller.changeDarkTheme();},
-          ),
+                      FloatingActionButton(
+                        child: Icon(
+                          Icons.wb_sunny,
+                          color: Theme.of(context).accentColor,
+                        ),
+                        heroTag: 'btn1',
+                        backgroundColor: Theme.of(context).primaryColor,
+                        onPressed: () {_.changeDefaultTheme();},
+                      ),
 
-        ],
-      ),
+                      SizedBox(width: 10,),
 
+                      FloatingActionButton(
+                        child: Icon(
+                          Icons.nights_stay,
+                          color: Theme.of(context).accentColor,
+                        ),
+                        heroTag: 'btn2',
+                        backgroundColor: Theme.of(context).primaryColor,
+                        onPressed: () {_.changeDarkTheme();},
+                      ),
+
+                    ],
+                  ),
+
+                );
+
+              }
+          );
+
+        }
     );
 
   }
